@@ -6,12 +6,13 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Data
-@EqualsAndHashCode(callSuper = false, exclude = {"refundCaseInfo"})
+@EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "CUSTOMER_INFO")
-public class CustomerInfo {
+public class CustomerInfo extends BaseEntity implements Serializable {
     private static final long serialVersionUID = -6946728522454892341L;
 
     @Column(name = "CUSTOMER_NAME",nullable = false, length = Global.VARCHAR100)

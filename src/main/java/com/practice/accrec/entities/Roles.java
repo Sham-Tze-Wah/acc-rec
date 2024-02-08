@@ -6,6 +6,7 @@ import lombok.EqualsAndHashCode;
 import org.springframework.context.annotation.Lazy;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,7 +15,7 @@ import java.util.Set;
 @Entity
 @Table(name = "ROLES")
 @Lazy
-public class Roles {
+public class Roles extends BaseEntity implements Serializable {
     private static final long serialVersionUID = -315919384999465060L;
 
     @Column(name = "NAME", nullable = false)

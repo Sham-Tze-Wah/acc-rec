@@ -6,6 +6,7 @@ import lombok.EqualsAndHashCode;
 import org.springframework.context.annotation.Lazy;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
@@ -13,7 +14,7 @@ import java.util.Date;
 @Entity
 @Table(name = "accounts")
 @Lazy
-public class Accounts {
+public class Accounts extends BaseEntity implements Serializable {
     private static final long serialVersionUID = -77806658444851291L;
 
     @Column(name = "USERNAME", nullable = false, length = Global.VARCHAR30)
